@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+you are on login page
+<a href="/accounts/sign-up">
+<button>Sign Up</button>
+    </a>
+
+<div class="row  form-center">
+        <div class="card shadow .mx-auto">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">{{app|title}} Form</h6>
+            </div>
+                <div class="card-body" style="padding:2em;">
+{#                     {% include 'display-messages.html' %}#}
+                     <form method="POST" class="text-left record-form" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-xl-12 col-sm-6 col-md-3">
+                                {% csrf_token %}
+{#                                    {{ form|crispy }}#}
+                                    {{ form }}
+                                <div class="form-group">
+                                    <br>
+                                    <div id = "verification_status" style="color: green"></div>
+                                    <button class="btn btn-theme-primary  btn-sm" type="submit" id="btn-submit" style="width:100%">Sign In</button>
+                                </div>
+                                <a href="/accounts/password_reset">Forgot Password</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
