@@ -50,23 +50,19 @@ class SignUpForm(forms.ModelForm):
             "otp",
         ]
 
-        labels = {
-            "first_name": "First name:",
-            "last_name": "Last member's name:",
-            "email": "Email Id",
-            "organization_name": "Organization Name",
-            "password": "Enter a Password",
-            "otp": "Enter the OTP",
-            "address_house_number": "Enter your address (row 1)",
-            "address_area": "Enter your colony/area",
-            "address_city": "Enter your city",
-            "address_state": "Enter your state",
-            "address_postal_code": "Enter your postal zip code",
-        }
-
     def __init__(self, *args, **kwargs):
         super(SignUpForm, self).__init__(*args, **kwargs)
         self.empty_permitted = False
+        self.fields['first_name'].label = "First name:"
+        self.fields['last_name'].label = "Last name:"
+        self.fields['email'].label = "Email Id"
+        self.fields['password'].label = "Enter a Password:"
+        self.fields['otp'].label = "Enter the OTP"
+        self.fields['address_house_number'].label = "Enter your address (row 1)"
+        self.fields['address_area'].label = "Enter your colony/area"
+        self.fields['address_city'].label = "Enter your city"
+        self.fields['address_state'].label = "Enter your state"
+        self.fields['address_postal_code'].label = "Enter your postal/zip code"
 
 
 class SignInForm(forms.Form):
