@@ -25,7 +25,7 @@ SECRET_KEY = 'ceg)$ba8n^w958c44w7bj+sr)(xmo^$m7of4m+h5(r$mi=k*@&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["hotmops.pythonanywhere.com", "http://127.0.0.1:8000/"]
+ALLOWED_HOSTS = ["hotmops.pythonanywhere.com", "127.0.0.1"]
 
 
 # Application definition
