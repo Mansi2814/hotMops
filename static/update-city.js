@@ -15,7 +15,6 @@ $ = django.jQuery
                             $city.empty();
                             let data1
                             data1 = JSON.parse(data)
-
                             for (const [key, value] of Object.entries(data1)) {
                                 $city.append($("<option></option>").attr("value", value).text(key));
                             }

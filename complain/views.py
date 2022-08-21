@@ -11,7 +11,7 @@ from django.views import generic
 
 from common.constants import STATE_CITY
 from complain.forms import ComplainForm
-# from indian_cities.dj_city import cities
+from complain.models import ComplainModel
 
 
 class ComplainFormView(generic.View):
@@ -46,3 +46,19 @@ class ComplainFormView(generic.View):
             print('Form not valid')
             messages.error(request, "Complain not valid!")
         return redirect("/home/complain/lodge-complain")
+
+
+class ComplainRecordView(generic.ListView):
+    template_name = "records.html"
+    model = ComplainModel
+    paginate_by = 10
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        return qs.filter(is_active=True)
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ComplainRecordView, self).get_context_data(*args, **kwargs)
+        context["app"] = "Complains Lodged"
+        context["header_row"] = ["Title", "Description", "City", "State", "Postal Code", "People Affected", "Date"]
+        return context
