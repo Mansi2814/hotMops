@@ -27,4 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("userApp.urls")),
     path("home/", decorator_include(login_required, "main.urls")),
+    path("common/", include("common.urls")),
 ]

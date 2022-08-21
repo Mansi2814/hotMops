@@ -2,6 +2,7 @@ from django import forms
 from django.contrib import messages
 from django.contrib.auth.models import User
 
+from common.constants import STATE_CHOICES, ALL_CITIES
 from userApp.models import UserAccountModel
 
 
@@ -11,8 +12,8 @@ class SignUpForm(forms.ModelForm):
     email = forms.EmailField(required=True)
     address_house_number = forms.CharField(required=True)
     address_area = forms.CharField(required=True)
-    address_city = forms.CharField(required=True)
-    address_state = forms.CharField(required=True)
+    address_city = forms.ChoiceField(choices=ALL_CITIES, required=True, label="city")
+    address_state = forms.ChoiceField(choices=STATE_CHOICES, required=True, label="state")
     address_postal_code = forms.CharField(required=True)
     password = forms.CharField(widget=forms.PasswordInput())
     otp = forms.CharField(required=False)
@@ -44,8 +45,8 @@ class SignUpForm(forms.ModelForm):
             "password",
             "address_house_number",
             "address_area",
-            "address_city",
             "address_state",
+            "address_city",
             "address_postal_code",
             "otp",
         ]
