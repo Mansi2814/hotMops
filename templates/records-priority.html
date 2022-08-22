@@ -1,0 +1,100 @@
+{% load static %}
+{% load crispy_forms_tags %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view record</title>
+</head>
+<body>
+<div class="container-fluid">
+     {% include 'display-messages.html' %}
+
+     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-default">Below is a summary of all the {{app}} records</h6>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xl-12 col-md-6 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-xl-12 col-sm-6 col-md-3">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            {% for head in header_row %}
+                                                <th>{{ head }}</th>
+                                            {% endfor %}
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        {% for record in object_list %}
+                                            <tr>
+                                                <td>{{ forloop.counter0|add:page_obj.start_index }}</td>
+                                                <td>{{ record.complain_id.complain_title }}</td>
+                                                <td>{{ record.complain_id.complain_desc }}</td>
+                                                <td>{{ record.complain_id.location_city }}</td>
+                                                <td>{{ record.complain_id.location_state }}</td>
+                                                <td>{{ record.complain_id.location_postal_code }}</td>
+                                                <td>{{ record.complain_id.affected_people_count }}</td>
+                                                <td>{{ record.complain_id.created_on }}</td>
+                                                <td>{{ record.complain_priority }}</td>
+                                                <td>{{ record.complain_status }}</td>
+
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="dataTables_paginate paging_simple_numbers"
+                                                 id="dataTable_paginate">
+                                                {% if is_paginated %}
+                                                <ul class="pagination">
+                                                    {% if page_obj.has_previous %}
+                                                    <li class="paginate_button page-item previous">
+                                                        <a class="page-link "
+                                                           href="?page={{ page_obj.previous_page_number }} ">Prev</a>
+                                                    </li>
+                                                    {% else %}
+                                                    <li class="paginate_button page-item previous disabled ">
+                                                        <span class="page-link ">Prev</span>
+                                                    </li>
+                                                    {% endif %} {% for i in page_obj.paginator.page_range %}
+                                                    {% if page_obj.number == i %}
+                                                    <li class="paginate_button page-item active ">
+                                                        <span class="page-link ">{{ i }}</span>
+                                                    </li>
+                                                    {% else %}
+                                                    <li class="paginate_button page-item ">
+                                                        <a class="page-link" href="?page={{ i }} ">{{ i }}</a>
+                                                    </li>
+                                                    {% endif %} {% endfor %} {% if page_obj.has_next %}
+                                                    <li class="paginate_button page-item ">
+                                                        <a class="page-link"
+                                                           href="?page={{ page_obj.next_page_number }} ">Next</a>
+                                                    </li>
+                                                    {% else %}
+                                                    <li class="paginate_button page-item next disabled ">
+                                                        <span class="page-link ">Next</span>
+                                                    </li>
+                                                    {% endif %}
+                                                </ul>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -14,7 +14,7 @@ class BaseModel(models.Model):
 
 
 class UserAccountModel(BaseModel):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_details')
     address_house_number = models.CharField(max_length=128, null=False)
     address_area = models.CharField(max_length=128, null=False)
     address_city = models.CharField(max_length=128, null=False)
