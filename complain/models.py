@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.http import Http404
+from django.shortcuts import redirect
 
 from common.constants import ACCESS_CHOICES, PUBLIC
 from userApp.models import BaseModel
@@ -21,4 +23,11 @@ class ComplainModel(BaseModel):
 
     def __str__(self):
         return str(self.complain_id)
+
+    def get_complain_by_id(self, complain_id):
+        try:
+            obj = self.objects.get(complain_id=complain_id)
+            return obj
+        except:
+            return None
 

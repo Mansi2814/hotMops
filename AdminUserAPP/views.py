@@ -8,6 +8,9 @@ from AdminUserAPP.models import ComplainPriorityModel
 from userApp.models import UserAccountModel
 
 
+def adminHomepage(request):
+    return render(request, 'adminHome.html')
+
 class ComplainPriorityRecordView(generic.ListView):
     template_name = "records-priority.html"
     model = ComplainPriorityModel

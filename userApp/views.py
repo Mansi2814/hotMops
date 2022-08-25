@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import Group
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -88,6 +89,8 @@ class SignIn(generic.View):
             if user:
                 login(request, user)
                 messages.success(request, "Logged In Successfully!")
+                if Group.objects.get(name='admin_user') in request.user.groups.all():
+                    return redirect("/home/admin-app")
                 return redirect("/home")
             else:
                 messages.success(request, "Invalid Credentials!")

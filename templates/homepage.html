@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HotMops | Home</title>
-</head>
-<body>
-  You are on the home page.
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 10vw;">
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/1.png' %}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Lodge a Complaint</h5>
+              <a href="/home/complain/lodge-complain" class="btn btn-primary">Lodge</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/2.png' %}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Track your Complaints</h5>
+              <a href="/home/complain/track-complain" class="btn btn-primary">Track</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/3.png' %}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">View Complaints</h5>
+              <a href="/home/complain/view-complain-all" class="btn btn-primary">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/4.png' %}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Call support</h5>
+              <a href="#" class="btn btn-primary">Dial</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'assets/5.png' %}" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">FAQs and Chat Support</h5>
+                <a href="#" class="btn btn-primary">Find out</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'assets/6.png' %}" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Check Calendar</h5>
+                <a href="#" class="btn btn-primary">Check</a>
+              </div>
+            </div>
+          </div>
+      </div>
+{% endblock %}

@@ -1,12 +1,53 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>landing</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hotMops</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/24a476b79d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-you are on landing page
-<a href="accounts/sign-in/"><button>sign in</button></a>
-<a href="accounts/sign-up/"><button>sign up</button></a>
+    <a id="home"></a>
+    <section class="parallax" style="background-image: url('{% static "assets/bg.png" %}')">
+        <div class="text-block">
+            <b class="title">HOT</b><b class="r_color title">MOPS</b>
+            <p class="typewriter-text">May I Help You ?<br>
+                <a href="accounts/sign-in/"> <button type="button" class="button-6 me-2 btn-lg">
+                    Sign-in</button></a>
+                <a href="accounts/sign-up/"><button type="button" class="button-6 button-7 btn-lg
+                ">Sign-up</button></a> <br> <button type="button" class="button-6 button-7 btn-lg
+                ">Track Your Application</button>
+            </p>
+
+        </div>
+    </section>
+    <div id="mySidenav" class="sidenav">
+        <a href="accounts/sign-in/" id="blogn" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+            data-aos-duration="500">Sign-in<svg style="    fill: white;
+            height: 22px;
+            margin-left: 25px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+               <path
+                    d="M344.7 238.5l-144.1-136C193.7 95.97 183.4 94.17 174.6 97.95C165.8 101.8 160.1 110.4 160.1 120V192H32.02C14.33 192 0 206.3 0 224v64c0 17.68 14.33 32 32.02 32h128.1v72c0 9.578 5.707 18.25 14.51 22.05c8.803 3.781 19.03 1.984 26-4.594l144.1-136C354.3 264.4 354.3 247.6 344.7 238.5zM416 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c17.67 0 32 14.33 32 32v256c0 17.67-14.33 32-32 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c53.02 0 96-42.98 96-96V128C512 74.98 469 32 416 32z" />
+            </svg></a>
+        <a href="accounts/sign-up/" id="projectsn" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"
+            data-aos-duration="500">Sign-up<i class="fas fa-user-plus"
+                style=" background-color: transparent; font-size: 16px; margin-left: 20px;"></i></a>
+        <a href="#contact" id="contactn">Status<i class="fas fa-map-marker-alt"
+                style=" background-color: transparent; font-size: 20px; margin-left: 37px;"></i> </a>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
