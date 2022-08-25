@@ -11,15 +11,17 @@ from userApp.models import UserAccountModel
 def adminHomepage(request):
     return render(request, 'adminHome.html')
 
+
 class ComplainPriorityRecordView(generic.ListView):
     template_name = "records-priority.html"
     model = ComplainPriorityModel
-    paginate_by = 10
+    paginate_by = 9
 
     def get_queryset(self):
         qs = super().get_queryset()
         user = self.request.user
-        return qs.filter(is_active=True, complain_id__location_state=user.user_details.address_city)
+        # return qs.filter(is_active=True, complain_id__location_state=user.user_details.address_city)
+        return qs.filter(is_active=True)
 
     def get_context_data(self, *args, **kwargs):
         context = super(ComplainPriorityRecordView, self).get_context_data(*args, **kwargs)

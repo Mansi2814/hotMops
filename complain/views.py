@@ -13,6 +13,7 @@ from AdminUserAPP.models import ComplainPriorityModel
 from common.constants import STATE_CITY
 from complain.forms import ComplainForm
 from complain.models import ComplainModel
+from complain.python_code import complaintAnalyzer
 
 
 class ComplainFormView(generic.View):
@@ -51,7 +52,7 @@ class ComplainFormView(generic.View):
 
     def addPriority(self, complain_id):
         model = ComplainPriorityModel
-        complain_priority = 2
+        complain_priority = complaintAnalyzer(complain_id.complain_desc)
         new_obj = model(complain_id=complain_id, complain_priority=complain_priority, complain_status='Unassigned')
         new_obj.save()
         pass
