@@ -13,7 +13,7 @@ def adminHomepage(request):
 
 
 class ComplainPriorityRecordView(generic.ListView):
-    template_name = "records-priority.html"
+    template_name = "viewComplainAdmin.html"
     model = ComplainPriorityModel
     paginate_by = 9
 
@@ -29,3 +29,7 @@ class ComplainPriorityRecordView(generic.ListView):
         context["header_row"] = ["Title", "Description", "City", "State", "Postal Code", "People Affected", "Date",
                                  "Priority", "Status"]
         return context
+
+
+def ComplainReview(request, complain_id):
+    return render(request, 'adminComplainReview.html')

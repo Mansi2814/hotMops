@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div
+      class="row g-4"
+      style="
+        width: 80vw;
+        margin-right: 10vw;
+        margin-left: 10vw;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+      "
+    >
+      <div class="col">
+        <div class="card">
+          <h5
+            class="card-header"
+            style="background-color: #0d6efd; color: #ffffff"
+          >
+{#            {{ }}#}
+          </h5>
+          <div class="card-body">
+            <table class="table table-bordered border-primary">
+              <tbody>
+                <tr>
+                  <th scope="row">Complaint ID</th>
+                  <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Complaint Status</th>
+                    <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Complaint Title</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Address</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Area</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">City</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">State</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Pincode</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Access</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Number of People Affected</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Priority</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Complaint Description</th>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <form class="row g-3">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                  <option selected>Pending</option>
+                  <option value="1">Approved</option>
+                  <option value="2">Rejected</option>
+                </select>
+                <label for="floatingSelect">Update Status</label>
+              </div>
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                  <option selected>Pending</option>
+                  <option value="1">Approved</option>
+                </select>
+                <label for="floatingSelect">Assign Worker</label>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Update Complaint</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

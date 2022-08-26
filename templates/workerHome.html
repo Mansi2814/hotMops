@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 10vw;">
+          <div class = "col"></div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="{% static 'assets/13.png' %}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Check assigned tasks</h5>
+                  <a href="#" class="btn btn-primary">Check</a>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

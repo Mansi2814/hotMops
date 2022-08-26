@@ -91,6 +91,8 @@ class SignIn(generic.View):
                 messages.success(request, "Logged In Successfully!")
                 if Group.objects.get(name='admin_user') in request.user.groups.all():
                     return redirect("/home/admin-app")
+                elif Group.objects.get(name='worker') in request.user.groups.all():
+                    return redirect("/home/worker-app")
                 return redirect("/home")
             else:
                 messages.success(request, "Invalid Credentials!")

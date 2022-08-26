@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'common',
     'complain',
     'AdminUserAPP',
+    'workerApp',
 ]
 
 MIDDLEWARE = [

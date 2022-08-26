@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div
+      class="row row-cols-1 row-cols-md-3 g-4"
+      style="
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+      "
+    >
+    {% for record in object_list %}
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header" style="background-color: #0d6efd; color: #FFFFFF">{{ record.complain_id.complain_id }}</h5>
+          <div class="card-body">
+            <strong> Complaint ID: </strong> {{ record.complain_id.complain_id }}<br />
+            <strong> Title: </strong> {{ record.complain_id.complain_title }}<br />
+            <strong> Date: </strong> {{ record.complain_id.created_on }}<br />
+            <strong> Location: </strong> {{ record.complain_id.location_city }}, {{ record.complain_id.location_state }}<br />
+            <strong> Status: </strong> {{ record.complain_status }}<br />
+            <strong> Priority: </strong> {{ record.complain_priority }} <br />
+            <a href="/home/admin-app/review-complain/{{ record.complain_id.complain_id }}">
+              <button class="btn btn-sm btn-primary" name="id" value="" type="submit" style="margin-top: 10px">View Details</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+{% endblock %}

@@ -5,4 +5,5 @@ urlpatterns = [
     path('', home, name="home"),
     path("complain/", include('complain.urls')),
     path("admin-app/", include('AdminUserAPP.urls')),
+    path("worker-app/", include('workerApp.urls')),
 ]
