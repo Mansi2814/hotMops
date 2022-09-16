@@ -138,12 +138,3 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = "kgfwldhomzslgqej"
-
-# superadmin account password
-# nikjam@gmail.com
-# hotmopsadmin
-
-# email id credentials
-# hotmopsgroup@gmail.com
-# nikjam@sih
-# app password kgfwldhomzslgqej
